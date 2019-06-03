@@ -70,13 +70,15 @@ namespace SuperheroProject.Controllers
             try
             {
                 // TODO: Add update logic here
-                Superhero superheroToUpdate = context.Superheroes.Where(s => s.Id == superhero.Id).Single();
+                Superhero superheroToUpdate = context.Superheroes.Where(s => s.Id == id).Single();
                 superheroToUpdate.superheroName = superhero.superheroName;
                 superheroToUpdate.alterEgoFirstName = superhero.alterEgoFirstName;
                 superheroToUpdate.alterEgoLastName = superhero.alterEgoLastName;
                 superheroToUpdate.primaryAbility = superhero.primaryAbility;
                 superheroToUpdate.secondaryAbility = superhero.secondaryAbility;
                 superheroToUpdate.catchphrase = superhero.catchphrase;
+
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -98,8 +100,9 @@ namespace SuperheroProject.Controllers
         {
             try
             {
-                // TODO: Add delete logic here   
-                context.Superheroes.Remove(superhero);
+                // TODO: Add delete logic here  
+                Superhero superheroToDelete = context.Superheroes.Where(s => s.Id == id).Single();
+                context.Superheroes.Remove(superheroToDelete);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
