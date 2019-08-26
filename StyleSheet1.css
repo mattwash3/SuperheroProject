@@ -1,0 +1,17 @@
+﻿body {
+    background-image: url("SuperheroProject/cosmicspidey.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.feature_home {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    display: block;
+    background-position: center center;
+    background-size: 100%;
+}
+

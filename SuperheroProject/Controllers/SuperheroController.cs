@@ -77,7 +77,6 @@ namespace SuperheroProject.Controllers
                 superheroToUpdate.primaryAbility = superhero.primaryAbility;
                 superheroToUpdate.secondaryAbility = superhero.secondaryAbility;
                 superheroToUpdate.catchphrase = superhero.catchphrase;
-
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
